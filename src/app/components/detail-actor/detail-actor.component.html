@@ -1,0 +1,13 @@
+<img [src]="this.imgURL+actor.profile_path" [alt]="actor.name">
+<h5>{{actor.name}}</h5>
+<p>{{actor.biography}}</p>
+<p>{{actor.birthday}}</p>
+<div *ngIf="movies">
+    <ul *ngFor='let movie of movies.known_for'>
+        <div>
+            <img [routerLink]="[ '/movies', movie.id]" [src]="this.imgURL+movie.backdrop_path" [alt]="movie.title">
+            <p>{{movie.title}}</p>
+        </div>
+
+    </ul>
+</div>

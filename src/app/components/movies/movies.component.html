@@ -1,0 +1,11 @@
+<div id="movie-component" *ngIf="movies">
+
+    <div class="card" style="width: 20rem;" *ngFor='let movie of movies'>
+        <img [routerLink]="[ '/movies', movie.id]" [src]="this.imgURL+movie.backdrop_path" class="card-img-top" [alt]="movie.title">
+        <div class="card-body">
+            <h5 class="card-title">{{movie.original_title}}</h5>
+            <p class="card-text">{{movie.vote_average}}</p>
+            <button [routerLink]="[ '/movies', movie.id]" class="btn btn-primary">Go Detail</button>
+        </div>
+    </div>
+</div>

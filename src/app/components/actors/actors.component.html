@@ -1,0 +1,11 @@
+<div class="card-columns">
+
+    <div class="card" style="width: 15rem;" *ngFor='let actor of actors'>
+        <img [routerLink]="[ '/actors', actor.id]" [src]="this.imgURL+actor.profile_path" class="card-img-top" [alt]="actor.name">
+        <div class="card-body">
+            <h5 class="card-title">{{actor.name}}</h5>
+            <p class="card-text">{{actor.overview}}</p>
+            <button [routerLink]="[ '/actors', actor.id]" class="btn btn-primary">Go Detail</button>
+        </div>
+    </div>
+</div>

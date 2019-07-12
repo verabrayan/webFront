@@ -1,0 +1,24 @@
+<img [src]="this.imgURL+movie.backdrop_path" [alt]="movie.title">
+
+<h5>{{movie.original_title}}</h5>
+<p>{{movie.overview}}</p>
+<p>{{movie.original_language}}</p>
+<p>{{movie.vote_average}}</p>
+<div *ngIf="similar">
+    <ul class="container" *ngFor='let sim of similar; let i = index'>
+        <div class="div-img" *ngIf='i < 5'>
+            <img class="img" (click)="goSimilarMovie(sim.id)" [src]="this.imgURL+sim.backdrop_path" [alt]="sim.title">
+            <div class="text">{{sim.original_title}}</div>
+        </div>
+    </ul>
+</div>
+<div *ngIf="credits">
+    <ul class="container" *ngFor='let cast of credits; let i = index'>
+        <div class="div-img" *ngIf='i < 5'>
+            <img class="img" [routerLink]="[ '/actors', cast.id]" [src]="this.imgURL+cast.profile_path" [alt]="cast.name">
+            <div class="text">
+                {{cast.name}} {{cast.character}}
+            </div>
+        </div>
+    </ul>
+</div>
