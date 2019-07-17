@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router'; 
 import { MovieApiService } from '../../services/movie-api.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-detail',
@@ -16,9 +19,20 @@ export class DetailComponent implements OnInit {
   public credits;
   public similar;
 
+ 
+  
   constructor(private route:ActivatedRoute,
     private _movieApiService:MovieApiService,
-    private router: Router) { }
+    private router: Router
+
+   
+
+
+
+    ) {
+
+       
+    }
 
   ngOnInit() {
     this.initialData();

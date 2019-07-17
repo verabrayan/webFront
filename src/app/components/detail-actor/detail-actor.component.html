@@ -1,4 +1,4 @@
-<img [src]="this.imgURL+actor.profile_path" [alt]="actor.name">
+<!-- <img [src]="this.imgURL+actor.profile_path" [alt]="actor.name">
 <h5>{{actor.name}}</h5>
 <p>{{actor.biography}}</p>
 <p>{{actor.birthday}}</p>
@@ -10,4 +10,64 @@
         </div>
 
     </ul>
-</div>
+</div> -->
+
+<body>
+    <div id="todo">
+        <div id="detail-component">
+
+            <header class="main-header">
+                <div class="background-overlay">
+                    <div class="container-movie ">
+
+                        <img [src]="this.imgURL+actor.profile_path" style="width: 75%;height: 75%;">
+
+
+                    </div>
+
+                    <div class="container-overlay">
+                        <div class="card-img-overlay">
+
+                            <h5>{{actor.name}}</h5>
+                            <p style="color: blanchedalmond  ">{{actor.biography}}</p>
+                            <p style="color: blanchedalmond">{{actor.birthday}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </header>
+
+            <div id="similar">
+                <h4 style="color: cornsilk">Tambien actuo en</h4>
+
+                <div ng2-carouselamos class="slides-wrapper" [width]="1000" [items]="movies.known_for" [$item]="item" [$prev]="prev" [$next]="next"></div>
+                <ng-template #prev>
+                    <img src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-left-256.png" style="width: 10%" id="left">
+                </ng-template>
+                <ng-template #next>
+                    <img src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-right-256.png" style="width: 10%" id="right">
+                </ng-template>
+
+
+                <ng-template #item let-item let-i=" index">
+                    <div id="movies-cards" style="margin-left: 5px" *ngIf="movies.known_for">
+
+                        <div class="card  mb-3" style="width: 20rem; background-color:black">
+
+                            <img [routerLink]="[ '/movies', movies.known_for[i].id] " [src]="this.imgURL+movies.known_for[i].backdrop_path" style="width: 280px ; height: 300px" class="card-img-top">
+                            <div class="card-body">
+
+                                <h4 class="card-title text-white">{{movies.known_for[i].original_title}}</h4>
+                                <p class="card-text text-warning">{{movies.known_for[i].vote_average}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+
+
+        </div>
+    </div>
+</body>

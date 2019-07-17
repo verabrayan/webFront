@@ -1,17 +1,19 @@
- ul {
-     background-color: rgba(0, 0, 0, .5);
-     li {
-         display: inline-block;
-         padding-top: 1em;
-         padding-bottom: 1em;
-         margin-right: 2em;
-         a {
-             color: white;
-             text-decoration: none;
-         }
-         a:hover {
-             background-color: #333333;
-             color: #ffffff;
-         }
-     }
- }
+.navbar {
+    box-shadow: 2px 2px 5px #000;
+    opacity: .9;
+}
+
+ul {
+    li {
+        display: inline-block;
+        padding-top: 1em;
+        margin-right: 2em;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+    }
+}
