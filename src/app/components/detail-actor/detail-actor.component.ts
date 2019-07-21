@@ -12,12 +12,30 @@ export class DetailActorComponent implements OnInit {
   private sub:any;
   public imgURL='https://image.tmdb.org/t/p/w500/'
 
+  /**
+   * 
+   * @param route 
+   * 
+   * @param _actorApiService 
+   * 
+   * @param router 
+   */
+
   constructor(private route:ActivatedRoute,
     private _actorApiService:ActorApiService,
     private router:Router) { }
 
   public actor;
   public movies;
+
+  /**
+   * Es un metodo en el cual se hace el llamdo a todos los metodos del servicio de actores
+   * 
+   * @returns Primero el detalle de un actor como un array
+   * 
+   * @returns Segundo un array objec el cual contiene todos los actores populares
+   * del cual se extrae las peliculas en las que actuo
+   */
 
   ngOnInit() {
     
@@ -46,9 +64,6 @@ export class DetailActorComponent implements OnInit {
 
 
   }
-  goMovie(id) {
-    console.log(id);
-    this.router.navigate([`/movies`, id]);
-  }
+
 
 }

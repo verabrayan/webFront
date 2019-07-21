@@ -244,17 +244,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/actors/actors.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/components/actors/actors.component.ts:27</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Se ejecuta el servicio de actores en el cual se hace el llamado a los actores populares</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Retorna un array objec el cual contiene los actores populares y cada uno es un objeto</p>
 
                     </div>
                 </td>
@@ -352,7 +360,18 @@ export class ActorsComponent implements OnInit {
   public actors&#x3D;[]
   public imgURL&#x3D;&#x27;https://image.tmdb.org/t/p/w500/&#x27;
 
+  /**
+   * 
+   * @param actorApiService 
+   */
+
   constructor(private actorApiService: ActorApiService) { }
+
+  /**
+   * Se ejecuta el servicio de actores en el cual se hace el llamado a los actores populares
+   * 
+   * @returns Retorna un array objec el cual contiene los actores populares y cada uno es un objeto
+   */
 
   ngOnInit() {
     this.actorApiService.getPopularActors().then(data &#x3D;&gt; this.actors &#x3D; data.results)
@@ -367,17 +386,24 @@ export class ActorsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card-columns&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
 
-    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 15rem;&quot; *ngFor&#x3D;&#x27;let actor of actors&#x27;&gt;
-        &lt;img [routerLink]&#x3D;&quot;[ &#x27;/actors&#x27;, actor.id]&quot; [src]&#x3D;&quot;this.imgURL+actor.profile_path&quot; class&#x3D;&quot;card-img-top&quot; [alt]&#x3D;&quot;actor.name&quot;&gt;
-        &lt;div class&#x3D;&quot;card-body&quot;&gt;
-            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{actor.name}}&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{actor.overview}}&lt;/p&gt;
-            &lt;button [routerLink]&#x3D;&quot;[ &#x27;/actors&#x27;, actor.id]&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Go Detail&lt;/button&gt;
+    &lt;div id&#x3D;&quot;detail-component&quot;&gt;
+
+
+        &lt;div class&#x3D;&quot;card-columns&quot;&gt;
+
+            &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 15rem; color: black;background-color: black&quot; *ngFor&#x3D;&#x27;let actor of actors&#x27;&gt;
+                &lt;img [routerLink]&#x3D;&quot;[ &#x27;/actors&#x27;, actor.id]&quot; [src]&#x3D;&quot;this.imgURL+actor.profile_path&quot; class&#x3D;&quot;card-img-top&quot; [alt]&#x3D;&quot;actor.name&quot;&gt;
+                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;h5 class&#x3D;&quot;card-title&quot; style&#x3D;&quot;color: blanchedalmond&quot;&gt;{{actor.name}}&lt;/h5&gt;
+                    &lt;p class&#x3D;&quot;card-text&quot;&gt;{{actor.overview}}&lt;/p&gt;
+                    &lt;button [routerLink]&#x3D;&quot;[ &#x27;/actors&#x27;, actor.id]&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Go Detail&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/body&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -410,6 +436,19 @@ img:hover {
     100% {
         opacity: 1;
     }
+}
+
+#detail-component {
+    margin: auto;
+    width: 960px;
+    height: auto;
+    background-color: #071019;
+}
+
+body {
+    width: auto;
+    height: auto;
+    background-color: black;
 }</code></pre>
     </div>
 
@@ -438,7 +477,7 @@ img:hover {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card-columns">    <div class="card" style="width: 15rem;" *ngFor=\'let actor of actors\'>        <img [routerLink]="[ \'/actors\', actor.id]" [src]="this.imgURL+actor.profile_path" class="card-img-top" [alt]="actor.name">        <div class="card-body">            <h5 class="card-title">{{actor.name}}</h5>            <p class="card-text">{{actor.overview}}</p>            <button [routerLink]="[ \'/actors\', actor.id]" class="btn btn-primary">Go Detail</button>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><body>    <div id="detail-component">        <div class="card-columns">            <div class="card" style="width: 15rem; color: black;background-color: black" *ngFor=\'let actor of actors\'>                <img [routerLink]="[ \'/actors\', actor.id]" [src]="this.imgURL+actor.profile_path" class="card-img-top" [alt]="actor.name">                <div class="card-body">                    <h5 class="card-title" style="color: blanchedalmond">{{actor.name}}</h5>                    <p class="card-text">{{actor.overview}}</p>                    <button [routerLink]="[ \'/actors\', actor.id]" class="btn btn-primary">Go Detail</button>                </div>            </div>        </div>    </div></body></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'ActorsComponent', 'selector': 'app-actors'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailActorComponent', 'selector': 'app-detail-actor'},{'name': 'DetailComponent', 'selector': 'app-detail'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MoviesComponent', 'selector': 'app-movies'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ActorsComponent'};

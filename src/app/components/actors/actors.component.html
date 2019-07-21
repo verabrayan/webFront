@@ -7,10 +7,10 @@
 
             <div class="card" style="width: 15rem; color: black;background-color: black" *ngFor='let actor of actors'>
                 <img [routerLink]="[ '/actors', actor.id]" [src]="this.imgURL+actor.profile_path" class="card-img-top" [alt]="actor.name">
-                <div class="card-body">
+                <div class="card-body" style="width: 15rem;background-color:  #002050">
                     <h5 class="card-title" style="color: blanchedalmond">{{actor.name}}</h5>
                     <p class="card-text">{{actor.overview}}</p>
-                    <button [routerLink]="[ '/actors', actor.id]" class="btn btn-primary">Go Detail</button>
+                    <!-- <button [routerLink]="[ '/actors', actor.id]" class="btn btn-primary">Go Detail</button> -->
                 </div>
             </div>
         </div>

@@ -237,14 +237,104 @@ export class AboutComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html"></code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css&quot;&gt;
+
+&lt;body&gt;
+    &lt;div id&#x3D;&quot;total&quot;&gt;
+        &lt;div id&#x3D;&quot;detail-component&quot;&gt;
+            &lt;div class&#x3D;&quot;background-overlay&quot;&gt;
+                &lt;div class&#x3D;&quot;card-group&quot;&gt;
+                    &lt;div class&#x3D;&quot; card &quot;&gt;
+                        &lt;img src&#x3D;&quot;https://i.stack.imgur.com/aP9Cm.png &quot; alt&#x3D;&quot;John &quot; style&#x3D;&quot;width:100% &quot;&gt;
+                        &lt;h1&gt;Jeisson Santacruz&lt;/h1&gt;
+                        &lt;p class&#x3D;&quot;title &quot;&gt;Ingenieria en Sistemas&lt;/p&gt;
+                        &lt;p&gt;Javeriana Cali&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-dribbble &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-linkedin &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;p&gt;&lt;button&gt;Contact&lt;/button&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;card &quot;&gt;
+                        &lt;img src&#x3D;&quot;https://i.stack.imgur.com/aP9Cm.png &quot; alt&#x3D;&quot;John &quot; style&#x3D;&quot;width:100% &quot;&gt;
+                        &lt;h1&gt;Bryan David Vera&lt;/h1&gt;
+                        &lt;p class&#x3D;&quot;title &quot;&gt;Ingenieria en Sistemas, &lt;/p&gt;
+                        &lt;p&gt;Javeriana Cali&lt;/p&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-dribbble &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-twitter &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-linkedin &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;a href&#x3D;&quot;# &quot;&gt;&lt;i class&#x3D;&quot;fa fa-facebook &quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                        &lt;p&gt;&lt;button&gt;Contact&lt;/button&gt;&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./about.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">#detail-component {
+    width: 900px;
+    height: auto;
+    background: url(&quot;https://blog.hubspot.es/hubfs/fondos-para-paginas-web.jpg&quot;);
+    background-size: cover;
+    margin: auto;
+}
+
+#total {
+    width: auto;
+    height: auto;
+    background: black;
+}
+
+.background-overlay {
+    background: rgba(25, 42, 86, 0.8);
+    height: 600px;
+}
+
+.card-group {
+    width: auto;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover,
+a:hover {
+    opacity: 0.7;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -272,7 +362,7 @@ export class AboutComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div></div>'
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><body>    <div id="total">        <div id="detail-component">            <div class="background-overlay">                <div class="card-group">                    <div class=" card ">                        <img src="https://i.stack.imgur.com/aP9Cm.png " alt="John " style="width:100% ">                        <h1>Jeisson Santacruz</h1>                        <p class="title ">Ingenieria en Sistemas</p>                        <p>Javeriana Cali</p>                        <a href="# "><i class="fa fa-dribbble "></i></a>                        <a href="# "><i class="fa fa-twitter "></i></a>                        <a href="# "><i class="fa fa-linkedin "></i></a>                        <a href="# "><i class="fa fa-facebook "></i></a>                        <p><button>Contact</button></p>                    </div>                    <div class="card ">                        <img src="https://i.stack.imgur.com/aP9Cm.png " alt="John " style="width:100% ">                        <h1>Bryan David Vera</h1>                        <p class="title ">Ingenieria en Sistemas, </p>                        <p>Javeriana Cali</p>                        <a href="# "><i class="fa fa-dribbble "></i></a>                        <a href="# "><i class="fa fa-twitter "></i></a>                        <a href="# "><i class="fa fa-linkedin "></i></a>                        <a href="# "><i class="fa fa-facebook "></i></a>                        <p><button>Contact</button></p>                    </div>                </div>            </div>        </div>    </div></body></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'ActorsComponent', 'selector': 'app-actors'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailActorComponent', 'selector': 'app-detail-actor'},{'name': 'DetailComponent', 'selector': 'app-detail'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MoviesComponent', 'selector': 'app-movies'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AboutComponent'};

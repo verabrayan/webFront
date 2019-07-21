@@ -150,6 +150,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -164,6 +165,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de las peliculas el cual me genera la URL del &quot;Movie Database&quot;</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -201,8 +206,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/movie-api.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/services/movie-api.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -243,7 +248,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual contiene la URL base del API de peliculas</p>
+<p>Metodo el cual genera la URL base del API de las peliculas</p>
+
                     </div>
                 </td>
             </tr>
@@ -271,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/movie-api.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/services/movie-api.service.ts:79</a></div>
                 </td>
             </tr>
 
@@ -288,6 +295,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -302,6 +310,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Es el id de la pelicula se desea conocer los creditos de la pelicula seleccionada</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -313,7 +325,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual tiene la URL del API &quot;credits&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API de los creditos de la pelicula</p>
+
                     </div>
                 </td>
             </tr>
@@ -341,8 +355,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/movie-api.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/services/movie-api.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -358,6 +372,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -372,6 +387,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Es el id de la pelicula se desea conocer el detalle</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -383,7 +402,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual tiene la URL del API &quot;detail movie&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API del detalle de una pelicula</p>
+
                     </div>
                 </td>
             </tr>
@@ -411,8 +432,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/movie-api.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/services/movie-api.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -420,8 +441,15 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Una promesa la cual tiene la URL del API &quot;popular movies&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API de peliculas populares</p>
 
                     </div>
                 </td>
@@ -450,8 +478,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/movie-api.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/services/movie-api.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -467,6 +495,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -481,6 +510,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Es el id de la pelicula  se desea conocer las peliculas similares a ella</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -492,7 +525,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual tiene la URL del API &quot;similar movie&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API de las peliculas similares</p>
+
                     </div>
                 </td>
             </tr>
@@ -621,21 +656,72 @@ export class MovieApiService {
   private apikey&#x3D;&#x27;abf662a1e403e935db8c037333fbbd0b&#x27;;
   private language &#x3D; &#x27;es-US&#x27;;
 
+  /**
+   * 
+   * @param _http 
+   * 
+   * Servicio de las peliculas el cual me genera la URL del &quot;Movie Database&quot;
+   */
+
   constructor(private _http:HttpClient) { }
+
+  /**
+   * 
+   * @param search 
+   * 
+   * @returns Una promesa la cual contiene la URL base del API de peliculas
+   * 
+   *  Metodo el cual genera la URL base del API de las peliculas
+   */
 
   getFromMovies(search: string): Promise&lt;any&gt;{
     let url &#x3D; &#x60;${this.baseURL}/${search}?api_key&#x3D;${this.apikey}&amp;language&#x3D;${this.language}&#x60;;
     return this._http.get(url).toPromise();
   }
+
+  /**
+ * @returns Una promesa la cual tiene la URL del API &quot;popular movies&quot;
+ * 
+ * Metodo el cual genera la URL completa para acceder al API de peliculas populares
+ */
   getPopularMovies():Promise&lt;any&gt;{
     return this.getFromMovies(&#x27;movie/popular&#x27;);
   }
+
+  /**
+   * 
+   * @param id Es el id de la pelicula se desea conocer el detalle
+   * 
+   * @returns Una promesa la cual tiene la URL del API &quot;detail movie&quot;
+   * 
+   * Metodo el cual genera la URL completa para acceder al API del detalle de una pelicula
+   */
   getMovieDetail(id:string):Promise&lt;any&gt;{
     return this.getFromMovies(&#x60;movie/${id}&#x60;);
   }
+
+  /**
+   * 
+   * @param id Es el id de la pelicula  se desea conocer las peliculas similares a ella
+   * 
+   * @returns Una promesa la cual tiene la URL del API &quot;similar movie&quot;
+   * 
+   * Metodo el cual genera la URL completa para acceder al API de las peliculas similares
+   */
+
   getSimilarMovies(id:string):Promise&lt;any&gt;{
     return this.getFromMovies(&#x60;movie/${id}/similar&#x60;);
   }
+
+  /**
+   * 
+   * @param id Es el id de la pelicula se desea conocer los creditos de la pelicula seleccionada
+   * 
+   * @returns Una promesa la cual tiene la URL del API &quot;credits&quot;
+   * 
+   * Metodo el cual genera la URL completa para acceder al API de los creditos de la pelicula
+   */
+
   getMovieCredits(id:string):Promise&lt;any&gt;{
     return this.getFromMovies(&#x60;movie/${id}/credits&#x60;);
   }

@@ -40,10 +40,10 @@
                 <h5 class="text-white mt-2 mb-4 ">Péliculas Actualizadas</h5>
                 <div class="card border-dark mb-3" style="width: 20rem; background-color : #071019" *ngFor='let movie of movies'>
                     <img [routerLink]="[ '/movies',movie.id]" [src]="this.imgURL+movie.backdrop_path" class="card-img-top" [alt]="movie.title">
-                    <div class="card-body">
-                        <h5 class="card-title text-white">{{movie.original_title}}</h5>
-                        <p class="card-text">{{movie.vote_average}}</p>
-                        <button [routerLink]="[ '/movies', movie.id]" class="btn btn-primary">Go Detail</button>
+                    <div class="card-body" style="width: 20rem;background-color:  #002050">
+                        <h5 class="card-title " style="color: white">{{movie.original_title}}</h5>
+                        <p class="card-text " style="color: yellow">{{movie.vote_average}}</p>
+                        <!-- <button [routerLink]="[ '/movies', movie.id]" class="btn btn-primary">Go Detail</button> -->
                     </div>
                 </div>
             </div>

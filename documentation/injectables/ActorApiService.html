@@ -144,6 +144,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -158,6 +159,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Servicio de los actores el cual me genera la URL del &quot;Movie Database&quot;</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -195,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/services/actor-api.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/actor-api.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -212,6 +217,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -226,6 +232,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>Es el id del actor al cual se desea conocer el detalle</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -237,7 +247,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual tiene la URL del API &quot;detail person&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API del detalle de un actor</p>
+
                     </div>
                 </td>
             </tr>
@@ -265,8 +277,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/actor-api.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/actor-api.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -307,7 +319,9 @@
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>Una promesa la cual contiene la URL base del API de actores</p>
+<p>Metodo el cual genera la URL base del API de actores   </p>
+
                     </div>
                 </td>
             </tr>
@@ -335,8 +349,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/services/actor-api.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/services/actor-api.service.ts:39</a></div>
                 </td>
             </tr>
 
@@ -344,8 +358,15 @@
             <tr>
                 <td class="col-md-4">
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Una promesa la cual tiene la URL del API &quot;popular person&quot;</p>
+<p>Metodo el cual genera la URL completa para acceder al API de actores populares</p>
 
                     </div>
                 </td>
@@ -475,18 +496,43 @@ export class ActorApiService {
   private apikey&#x3D;&#x27;abf662a1e403e935db8c037333fbbd0b&#x27;;
   private language &#x3D; &#x27;es-US&#x27;;
 
-  constructor(private http:HttpClient) { }
+  /**
+   * 
+   * @param http 
+   * 
+   * Servicio de los actores el cual me genera la URL del &quot;Movie Database&quot;
+   */
 
+  constructor(private http:HttpClient) { }
+/**
+ * 
+ * @param search 
+ * 
+ * @returns Una promesa la cual contiene la URL base del API de actores
+ * 
+ * Metodo el cual genera la URL base del API de actores   
+ */
   getFromActors(search: string): Promise&lt;any&gt;{
     let url &#x3D; &#x60;${this.baseURL}/${search}?api_key&#x3D;${this.apikey}&amp;language&#x3D;${this.language}&#x60;;
     console.log(&#x27;url&#x27;,url);
     return this.http.get(url).toPromise();
   }
-
+/**
+ * @returns Una promesa la cual tiene la URL del API &quot;popular person&quot;
+ * 
+ * Metodo el cual genera la URL completa para acceder al API de actores populares
+ */
   getPopularActors():Promise&lt;any&gt;{
     return this.getFromActors(&#x27;person/popular&#x27;);
   }
-
+/**
+ * 
+ * @param id Es el id del actor al cual se desea conocer el detalle
+ * 
+ * @returns Una promesa la cual tiene la URL del API &quot;detail person&quot;
+ * 
+ * Metodo el cual genera la URL completa para acceder al API del detalle de un actor
+ */
   getActorDetail(id:string):Promise&lt;any&gt;{
     return this.getFromActors(&#x60;person/${id}&#x60;);
   }

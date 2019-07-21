@@ -6,15 +6,21 @@
 }
 
 img {
+    position: relative;
     cursor: pointer;
     transition: .5s all ease 0s;
 }
 
-img:hover {
-    filter: opacity(.5);
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+.card-body {
+    filter: opacity(.8);
+    position: absolute;
+    bottom: 0px;
+}
+
+.card:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 @keyframes appear {

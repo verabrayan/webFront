@@ -324,7 +324,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
-
+import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
 import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { MoviesComponent } from &#x27;./components/movies/movies.component&#x27;;
@@ -336,6 +336,11 @@ import { AboutComponent } from &#x27;./components/about/about.component&#x27;;
 import { DetailComponent } from &#x27;./components/detail/detail.component&#x27;;
 import { DetailActorComponent } from &#x27;./components/detail-actor/detail-actor.component&#x27;;
 import { MenuComponent } from &#x27;./components/menu/menu.component&#x27;;
+import { from } from &#x27;rxjs&#x27;;
+import { OwlOptions } from &#x27;ngx-owl-carousel-o&#x27;;
+import { CarouselModule } from &#x27;ngx-owl-carousel-o&#x27;;
+import { Ng2CarouselamosModule } from &#x27;ng2-carouselamos&#x27;;
+
 
 @NgModule({
   declarations: [
@@ -348,16 +353,18 @@ import { MenuComponent } from &#x27;./components/menu/menu.component&#x27;;
     MenuComponent
   ],
   imports: [
+    CarouselModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2CarouselamosModule
   ],
   providers: [HttpClientModule,
     MovieApiService,ActorApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-</code></pre>
+export class SomeModule { }</code></pre>
     </div>
 </div>
 

@@ -27,80 +27,104 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content module">
+               <div class="content class">
                    <div class="content-data">
 
 
 
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li>AppRoutingModule</li>
+  <li>Classes</li>
+  <li>SomeModule</li>
 </ol>
 
-
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
     <div class="tab-pane fade active in" id="c-info">
-
         <p class="comment">
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app-routing.module.ts</code>
+            <code>src/app/app.module.ts</code>
         </p>
 
 
 
 
-        <div class="container-fluid module">
-            <div class="row">
-            </div>
-        </div>
+
+
+
+
+
+
+
+
 
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule, Component } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
+import { NgModule } from &#x27;@angular/core&#x27;;
+import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
+import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
+import { AppComponent } from &#x27;./app.component&#x27;;
 import { MoviesComponent } from &#x27;./components/movies/movies.component&#x27;;
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import { MovieApiService } from &#x27;./services/movie-api.service&#x27;;
 import { ActorsComponent } from &#x27;./components/actors/actors.component&#x27;;
+import { ActorApiService } from &#x27;./services/actor-api.service&#x27;;
 import { AboutComponent } from &#x27;./components/about/about.component&#x27;;
 import { DetailComponent } from &#x27;./components/detail/detail.component&#x27;;
 import { DetailActorComponent } from &#x27;./components/detail-actor/detail-actor.component&#x27;;
+import { MenuComponent } from &#x27;./components/menu/menu.component&#x27;;
+import { from } from &#x27;rxjs&#x27;;
+import { OwlOptions } from &#x27;ngx-owl-carousel-o&#x27;;
+import { CarouselModule } from &#x27;ngx-owl-carousel-o&#x27;;
+import { Ng2CarouselamosModule } from &#x27;ng2-carouselamos&#x27;;
 
-const routes: Routes &#x3D; [
-  {path:&#x27;movies&#x27;,component:MoviesComponent},
-  {path:&#x27;actors&#x27;,component: ActorsComponent},
-  {path:&#x27;about&#x27;,component: AboutComponent},
-  {path:&#x27;movies/:id&#x27;,component: DetailComponent},
-  {path:&#x27;actors/:id&#x27;,component: DetailActorComponent}
-];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [
+    AppComponent,
+    MoviesComponent,
+    ActorsComponent,
+    AboutComponent,
+    DetailComponent,
+    DetailActorComponent,
+    MenuComponent
+  ],
+  imports: [
+    CarouselModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    Ng2CarouselamosModule
+  ],
+  providers: [HttpClientModule,
+    MovieApiService,ActorApiService],
+  bootstrap: [AppComponent]
 })
-export class AppRoutingModule { }
-</code></pre>
+export class AppModule { }
+export class SomeModule { }</code></pre>
     </div>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -125,8 +149,8 @@ export class AppRoutingModule { }
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'SomeModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

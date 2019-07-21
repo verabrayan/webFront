@@ -20,25 +20,33 @@ export class DetailComponent implements OnInit {
   public similar;
 
  
-  
+  /**
+   * 
+   * @param route 
+   * 
+   * @param _movieApiService 
+   * 
+   * @param router 
+   */
   constructor(private route:ActivatedRoute,
     private _movieApiService:MovieApiService,
-    private router: Router
-
-   
-
-
-
-    ) {
-
-       
-    }
-
+    private router: Router ) { }
   ngOnInit() {
     this.initialData();
   }
+
+  /**
+   * Es un metodo en el cual se hace el llamdo a todos los metodos del servicio de peliculas
+   * 
+   * @returns Primero el detalle de una pelicual como un array
+   * 
+   * @returns Segundo un array objec el cual contiene todas la pelicula similares
+   * 
+   * @returns Tercero un array el cual tine los creditos de la pelicula
+   */
   initialData(){
-    this.sub=this.route.params.subscribe(params =>{this.idmovie = params.id});
+    this.sub=this.route.params
+    .subscribe(params =>{this.idmovie = params.id});
 
     this._movieApiService
     .getMovieDetail(this.idmovie)
@@ -62,6 +70,13 @@ export class DetailComponent implements OnInit {
     },2000) 
 
   }
+
+  /**
+   * 
+   * @param id el id de la pelicula a la cual se desea ver el detalle
+   * 
+   * Me lleva a la ruta de el detalle de una pelicula
+   */
   goSimilarMovie(id) {
     console.log(id);
     this.router.navigate([`/movies`, id]);

@@ -162,9 +162,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#goMovie">goMovie</a>
-                            </li>
-                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
@@ -265,72 +262,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="goMovie"></a>
-                    <span class="name">
-                        <b>
-                            goMovie
-                        </b>
-                        <a href="#goMovie"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>goMovie(id)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:49</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -349,17 +280,25 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:40</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Es un metodo en el cual se hace el llamdo a todos los metodos del servicio de actores</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Primero el detalle de un actor como un array</p>
 
                     </div>
                 </td>
@@ -387,7 +326,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -475,7 +414,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/detail-actor/detail-actor.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -530,12 +469,30 @@ export class DetailActorComponent implements OnInit {
   private sub:any;
   public imgURL&#x3D;&#x27;https://image.tmdb.org/t/p/w500/&#x27;
 
+  /**
+   * 
+   * @param route 
+   * 
+   * @param _actorApiService 
+   * 
+   * @param router 
+   */
+
   constructor(private route:ActivatedRoute,
     private _actorApiService:ActorApiService,
     private router:Router) { }
 
   public actor;
   public movies;
+
+  /**
+   * Es un metodo en el cual se hace el llamdo a todos los metodos del servicio de actores
+   * 
+   * @returns Primero el detalle de un actor como un array
+   * 
+   * @returns Segundo un array objec el cual contiene todos los actores populares
+   * del cual se extrae las peliculas en las que actuo
+   */
 
   ngOnInit() {
     
@@ -564,29 +521,72 @@ export class DetailActorComponent implements OnInit {
 
 
   }
-  goMovie(id) {
-    console.log(id);
-    this.router.navigate([&#x60;/movies&#x60;, id]);
-  }
+
 
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;img [src]&#x3D;&quot;this.imgURL+actor.profile_path&quot; [alt]&#x3D;&quot;actor.name&quot;&gt;
-&lt;h5&gt;{{actor.name}}&lt;/h5&gt;
-&lt;p&gt;{{actor.biography}}&lt;/p&gt;
-&lt;p&gt;{{actor.birthday}}&lt;/p&gt;
-&lt;div *ngIf&#x3D;&quot;movies&quot;&gt;
-    &lt;ul *ngFor&#x3D;&#x27;let movie of movies.known_for&#x27;&gt;
-        &lt;div&gt;
-            &lt;img [routerLink]&#x3D;&quot;[ &#x27;/movies&#x27;, movie.id]&quot; [src]&#x3D;&quot;this.imgURL+movie.backdrop_path&quot; [alt]&#x3D;&quot;movie.title&quot;&gt;
-            &lt;p&gt;{{movie.title}}&lt;/p&gt;
-        &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+    &lt;div id&#x3D;&quot;todo&quot;&gt;
+        &lt;div id&#x3D;&quot;detail-component&quot;&gt;
 
-    &lt;/ul&gt;
-&lt;/div&gt;</code></pre>
+            &lt;header class&#x3D;&quot;main-header&quot;&gt;
+                &lt;div class&#x3D;&quot;background-overlay&quot;&gt;
+                    &lt;div class&#x3D;&quot;container-movie &quot;&gt;
+
+                        &lt;img [src]&#x3D;&quot;this.imgURL+actor.profile_path&quot; style&#x3D;&quot;width: 75%;height: 75%;&quot;&gt;
+
+
+                    &lt;/div&gt;
+
+                    &lt;div class&#x3D;&quot;container-overlay&quot;&gt;
+                        &lt;div class&#x3D;&quot;card-img-overlay&quot;&gt;
+
+                            &lt;h5&gt;{{actor.name}}&lt;/h5&gt;
+                            &lt;p style&#x3D;&quot;color: blanchedalmond  &quot;&gt;{{actor.biography}}&lt;/p&gt;
+                            &lt;p style&#x3D;&quot;color: blanchedalmond&quot;&gt;{{actor.birthday}}&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+            &lt;/header&gt;
+
+            &lt;div id&#x3D;&quot;similar&quot;&gt;
+                &lt;h4 style&#x3D;&quot;color: cornsilk&quot;&gt;Tambien actuo en&lt;/h4&gt;
+
+                &lt;div ng2-carouselamos class&#x3D;&quot;slides-wrapper&quot; [width]&#x3D;&quot;1000&quot; [items]&#x3D;&quot;movies.known_for&quot; [$item]&#x3D;&quot;item&quot; [$prev]&#x3D;&quot;prev&quot; [$next]&#x3D;&quot;next&quot;&gt;&lt;/div&gt;
+                &lt;ng-template #prev&gt;
+                    &lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-left-256.png&quot; style&#x3D;&quot;width: 10%&quot; id&#x3D;&quot;left&quot;&gt;
+                &lt;/ng-template&gt;
+                &lt;ng-template #next&gt;
+                    &lt;img src&#x3D;&quot;https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-right-256.png&quot; style&#x3D;&quot;width: 10%&quot; id&#x3D;&quot;right&quot;&gt;
+                &lt;/ng-template&gt;
+
+
+                &lt;ng-template #item let-item let-i&#x3D;&quot; index&quot;&gt;
+                    &lt;div id&#x3D;&quot;movies-cards&quot; style&#x3D;&quot;margin-left: 5px&quot; *ngIf&#x3D;&quot;movies.known_for&quot;&gt;
+
+                        &lt;div class&#x3D;&quot;card  mb-3&quot; style&#x3D;&quot;width: 20rem; background-color:black&quot;&gt;
+
+                            &lt;img [routerLink]&#x3D;&quot;[ &#x27;/movies&#x27;, movies.known_for[i].id] &quot; [src]&#x3D;&quot;this.imgURL+movies.known_for[i].backdrop_path&quot; style&#x3D;&quot;width: 280px ; height: 300px&quot; class&#x3D;&quot;card-img-top&quot;&gt;
+                            &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+                                &lt;h4 class&#x3D;&quot;card-title text-white&quot;&gt;{{movies.known_for[i].original_title}}&lt;/h4&gt;
+                                &lt;p class&#x3D;&quot;card-text text-warning&quot;&gt;{{movies.known_for[i].vote_average}}&lt;/p&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ng-template&gt;
+            &lt;/div&gt;
+
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -619,6 +619,76 @@ img:hover {
         opacity: 1;
         transform: translateY(0em);
     }
+}
+
+#todo {
+    width: auto;
+    height: auto;
+    background-color: black;
+}
+
+#detail-component {
+    margin: auto;
+    width: 960px;
+    height: auto;
+    background-color: #071019;
+}
+
+.main-header {
+    margin-bottom: 50px;
+    width: 900;
+    height: 500px;
+    background: url(&quot;https://i2.wp.com/s1.hipertextual.com/wp-content/blogs.dir/4/files/2013/08/Cine-Mosaic-Principal-800x360.jpg&quot;);
+    background-size: cover;
+    border: black 3px inset;
+    box-shadow: 6px 6px 6px black;
+}
+
+.items {
+    max-width: 300px;
+    height: 300px;
+    background: #ECECEC;
+}
+
+#left,
+#right {
+    margin: 30px;
+}
+
+h5 {
+    color: blanchedalmond;
+    font-size: 250%;
+}
+
+.card-img-overlay {
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 600px;
+}
+
+.container-movie {
+    width: 400px;
+    height: 500px;
+}
+
+.background-overlay {
+    background: rgba(25, 42, 86, 0.7);
+    height: 500;
+}
+
+#similar {
+    margin-bottom: 100px;
+}
+
+#movies-cards {
+    width: 280px;
+    height: auto;
+}
+
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
 }</code></pre>
     </div>
 
@@ -647,7 +717,7 @@ img:hover {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><img [src]="this.imgURL+actor.profile_path" [alt]="actor.name"><h5>{{actor.name}}</h5><p>{{actor.biography}}</p><p>{{actor.birthday}}</p><div *ngIf="movies">    <ul *ngFor=\'let movie of movies.known_for\'>        <div>            <img [routerLink]="[ \'/movies\', movie.id]" [src]="this.imgURL+movie.backdrop_path" [alt]="movie.title">            <p>{{movie.title}}</p>        </div>    </ul></div></div>'
+        var COMPONENT_TEMPLATE = '<div><body>    <div id="todo">        <div id="detail-component">            <header class="main-header">                <div class="background-overlay">                    <div class="container-movie ">                        <img [src]="this.imgURL+actor.profile_path" style="width: 75%;height: 75%;">                    </div>                    <div class="container-overlay">                        <div class="card-img-overlay">                            <h5>{{actor.name}}</h5>                            <p style="color: blanchedalmond  ">{{actor.biography}}</p>                            <p style="color: blanchedalmond">{{actor.birthday}}</p>                        </div>                    </div>                </div>            </header>            <div id="similar">                <h4 style="color: cornsilk">Tambien actuo en</h4>                <div ng2-carouselamos class="slides-wrapper" [width]="1000" [items]="movies.known_for" [$item]="item" [$prev]="prev" [$next]="next"></div>                <ng-template #prev>                    <img src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-left-256.png" style="width: 10%" id="left">                </ng-template>                <ng-template #next>                    <img src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/nav-arrow-right-256.png" style="width: 10%" id="right">                </ng-template>                <ng-template #item let-item let-i=" index">                    <div id="movies-cards" style="margin-left: 5px" *ngIf="movies.known_for">                        <div class="card  mb-3" style="width: 20rem; background-color:black">                            <img [routerLink]="[ \'/movies\', movies.known_for[i].id] " [src]="this.imgURL+movies.known_for[i].backdrop_path" style="width: 280px ; height: 300px" class="card-img-top">                            <div class="card-body">                                <h4 class="card-title text-white">{{movies.known_for[i].original_title}}</h4>                                <p class="card-text text-warning">{{movies.known_for[i].vote_average}}</p>                            </div>                        </div>                    </div>                </ng-template>            </div>        </div>    </div></body></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'ActorsComponent', 'selector': 'app-actors'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DetailActorComponent', 'selector': 'app-detail-actor'},{'name': 'DetailComponent', 'selector': 'app-detail'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MoviesComponent', 'selector': 'app-movies'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DetailActorComponent'};

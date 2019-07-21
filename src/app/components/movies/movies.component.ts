@@ -14,7 +14,18 @@ export class MoviesComponent implements OnInit {
   public imgURL='https://image.tmdb.org/t/p/w500/'
   router: any;
 
+  /**
+   * 
+   * @param _movieApiService 
+   */
+
   constructor(private _movieApiService: MovieApiService) { }
+
+  /**
+   * Se ejecuta el servicio de pelicula en el cual se hace el llamado a las peliculas populares
+   * 
+   * @returns Retorna un array objec el cual contiene las peliculas populares y cada uno es un objeto
+   */
 
   ngOnInit() {
     this._movieApiService.getPopularMovies().then(data => this.movies = data.results)
